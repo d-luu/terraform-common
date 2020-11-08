@@ -26,3 +26,9 @@ func (e nativeError) FromExpr() *FromExpr {
 	// Native errors are not expression-related
 	return nil
 }
+
+func FromError(err error) Diagnostic {
+	return &nativeError{
+		err: err,
+	}
+}

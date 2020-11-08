@@ -56,11 +56,5 @@ func (d rpcFriendlyDiag) FromExpr() *FromExpr {
 }
 
 func init() {
-	//defer func() {
-	//	err := recover()
-	//	if err == nil || !strings.Contains(err.Error(), `registering duplicate types for "*tfdiags.rpcFriendlyDiag"`) {
-	//		panic(err)
-	//	}
-	//}
 	gob.Register((*rpcFriendlyDiag)(nil))
 }
