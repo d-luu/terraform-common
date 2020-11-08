@@ -29,3 +29,11 @@ func (d diagnosticBase) Source() Source {
 func (d diagnosticBase) FromExpr() *FromExpr {
 	return nil
 }
+
+func Diag(sev Severity, summary, detail string) Diagnostic {
+	return &diagnosticBase{
+		severity: sev,
+		summary:  summary,
+		detail:   detail,
+	}
+}
